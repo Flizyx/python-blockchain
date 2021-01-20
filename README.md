@@ -18,6 +18,8 @@ https://github.com/15Dkatz/python-blockchain-tutorial/tree/aee78721a361da57161d9
 python -m backend.blockchain.blockchain
 python -m backend.blockchain.block
 python -m backend.util.crypto_hash
+python -m backend.scripts.average_block_rate
+python -m backend.util.hex_to_binary
 ```
 
 **Run the tests**
