@@ -26,3 +26,7 @@ Make sure to activate the virtual environment.
 ```
 python -m pytest backend/tests
 ```
+
+https://github.com/15Dkatz/python-blockchain-tutorial/tree/ec9c153047aa25be637aeae727a7d5e807fc5426
+
+proof of work and the 51% attack, Hashcash 1997
