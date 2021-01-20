@@ -13,3 +13,8 @@ pip3 install -r requirements.txt
 ```
 
 https://github.com/15Dkatz/python-blockchain-tutorial/tree/aee78721a361da57161d92a9cfa0ebef95b0c411
+
+```
+python3 -m backend.blockchain.blockchain
+python3 -m backend.util.crypto_hash
+```
