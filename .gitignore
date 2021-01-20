@@ -1,4 +1,6 @@
-.pytest_cache
-blockchain-env
+__pycache__/
+env/
+
+.pytest_cache/
+blockchain-env/
 .env
-__pycache__
