@@ -9,6 +9,7 @@ def test_mine_function():
     assert isinstance(block, Block)  # check if block is a Block instance
     assert block.data == data
     assert block.last_hash == last_block.hash
+    assert block.hash[0:block.difficulty] == '0' * block.difficulty
 
 
 def test_genesis():

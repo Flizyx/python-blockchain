@@ -29,24 +29,35 @@ class Block:
     def __repr__(self) -> str:
         return (
             'Block('
-            f'timestamp: {self.timestamp},'
-            f'last_hash: {self.last_hash},'
-            f'hash: {self.hash},'
-            f'Block - data: {self.data},'
-            f'difficulty: {self.difficulty},'
+            f'timestamp: {self.timestamp}, '
+            f'last_hash: {self.last_hash}, '
+            f'hash: {self.hash}, '
+            f'Block - data: {self.data}, '
+            f'difficulty: {self.difficulty}, '
             f'nonce: {self.nonce})'
         )
 
     @staticmethod
     def mine_block(last_block, data):
         """
-        Mines a block based on the given last block and data.
+        Mines a block based on the given last block and data, until a block hash 
+        is found that meets the leading 0's proof of work requirement.
         """
         timestamp = time.time_ns()
         last_hash = last_block.hash
+        # control speed of mining blocks (Dynamic difficulty and Mine rate)
+        difficulty = last_block.difficulty
+        nonce = 0
+
         # importante, datos que se tienen en cuenta al encriptar
-        hash = crypto_hash(timestamp, last_hash, data)
-        return Block(timestamp, last_hash, hash, data)
+        hash = crypto_hash(timestamp, last_hash, data, difficulty, nonce)
+
+        while hash[0:difficulty] != '0' * difficulty:
+            nonce += 1
+            timestamp = time.time_ns()  # important before hashing again
+            hash = crypto_hash(timestamp, last_hash, data, difficulty, nonce)
+
+        return Block(timestamp, last_hash, hash, data, difficulty, nonce)
 
     @staticmethod
     def genesis():
