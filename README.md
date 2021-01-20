@@ -34,3 +34,13 @@ https://github.com/15Dkatz/python-blockchain-tutorial/tree/ec9c153047aa25be637ae
 proof of work and the 51% attack, Hashcash 1997
 
 https://github.com/15Dkatz/python-blockchain-tutorial/tree/b7ff4a98a9b60381ad070f4145963616e42ec80c
+
+chain validation and replacement:
+https://github.com/15Dkatz/python-blockchain-tutorial/tree/4399e7f56b8f5a38b59b712c2c7a556e1c2a4989
+
+**Run the application and API**
+Make sure to activate the virtual environment.
+
+```
+python -m backend.app
+```
