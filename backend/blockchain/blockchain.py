@@ -16,6 +16,13 @@ class Blockchain:
     def __repr__(self) -> str:
         return f'Blockchain: {self.chain}'
 
+    def replace_chain(self, chain):
+        """
+        Replace the local chain with the incoming one if the following rules apply:
+        - the incoming chain is longer than the local one
+        - the incoming chain is formatted properly.
+        """
+
     @staticmethod
     def is_valid_chain(chain):
         """
