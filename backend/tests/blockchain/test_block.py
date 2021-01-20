@@ -1,4 +1,7 @@
+import pytest
 import time
+
+from typing import Match
 from backend.blockchain.block import Block, GENESIS_DATA
 from backend.config import MINE_RATE, SECONDS
 from backend.util.hex_to_binary import hex_to_binary
@@ -53,3 +56,17 @@ def test_mined_block_difficulty_limits_at_1():
     mined_block = Block.mine_block(last_block, 'bar')
 
     assert mined_block.difficulty == 1
+
+
+def test_is_valid_block():
+    last_block = Block.genesis()
+    block = Block.mine_block(last_block, 'test-data')
+    Block.is_valid_block(last_block, block)
+
+
+def test_is_valid_block_bad_last_hash():
+    last_block = Block.genesis()
+    block = Block.mine_block(last_block, 'test-data')
+    block.last_hash = 'evil_last_hash'
+    with pytest.raises(Exception, match='The block last_hash must be correct'):
+        Block.is_valid_block(last_block, block)
