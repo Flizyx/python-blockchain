@@ -16,6 +16,7 @@ https://github.com/15Dkatz/python-blockchain-tutorial/tree/aee78721a361da57161d9
 
 ```
 python -m backend.blockchain.blockchain
+python -m backend.blockchain.block
 python -m backend.util.crypto_hash
 ```
 
