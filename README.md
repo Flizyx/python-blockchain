@@ -43,4 +43,7 @@ Make sure to activate the virtual environment.
 
 ```
 python -m backend.app
+python -m backend.pubsub
 ```
+
+https://www.pubnub.com/docs/sdks/python/

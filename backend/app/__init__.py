@@ -7,7 +7,7 @@ blockchain = Blockchain()
 
 """
 The goal is to use a public ledger to record transaction data in order to support a cyptocurrency
-pub/sub pattern for real time interaction and updating (broadcasting)
+pub/sub pattern for real time interaction and updating (broadcasting) #PubNub its free for the moment
 """
 
 
